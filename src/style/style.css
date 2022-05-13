@@ -152,4 +152,27 @@ main section .items img {
 main .modal {
   display: none;
 }
+
+.move_top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  -webkit-box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+.move_top-btn::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: -5px -3px;
+  background-image: url("../assets/icon/icon-top-btn.png");
+}
 /*# sourceMappingURL=style.css.map */
