@@ -58,7 +58,6 @@ header {
       -ms-flex-pack: center;
           justify-content: center;
   background-color: #fff;
-  border: 1px solid red;
 }
 
 header .header-cont {
@@ -70,13 +69,17 @@ header .header-cont {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  border: 1px solid red;
 }
 
 header .header-cont .nav-cont {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 400px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 50px;
 }
 
 header .header-cont .nav-cont nav ul {
@@ -90,8 +93,47 @@ header .header-cont .nav-cont nav ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 1px solid red;
   gap: 20px;
+}
+
+header .header-cont .nav-cont .darkmod-cont {
+  position: relative;
+  width: 120px;
+  height: 44px;
+  background-color: grey;
+  border-radius: 20px;
+  z-index: 10;
+}
+
+header .header-cont .nav-cont .darkmod-cont.dkmod {
+  background-color: #1A6DFF;
+}
+
+header .header-cont .nav-cont .darkmod {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: black;
+  border: none;
+  z-index: 20;
+  top: 2px;
+  margin-left: 8px;
+  -webkit-transition: .3s linear all;
+  transition: .3s linear all;
+}
+
+header .header-cont .nav-cont .darkmod.dkmod {
+  position: absolute;
+  top: 2px;
+  -webkit-transform: translateX(60px);
+          transform: translateX(60px);
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: #fff;
+  -webkit-transition: .3s linear all;
+  transition: .3s linear all;
 }
 
 main {
