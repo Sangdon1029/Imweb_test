@@ -14,9 +14,9 @@
             <div class="nav-cont">
                 <nav>
                     <ul>
-                        <li class="nav-items">menu1</li>
-                        <li class="nav-items">menu2</li>
-                        <li class="nav-items">menu3</li>
+                        <li class="nav-items">Menu</li>
+                        <li class="nav-items">Category</li>
+                        <li class="nav-items">About</li>
                     </ul>
                 </nav>
                 <div id="darkmod-cont" class="darkmod-cont">
@@ -26,13 +26,13 @@
             </div>
         </div>
     </header>
-    <main>
+    <main id="main">
         <section>
             <article class="items">
                 <img src="./src/assets/img/item-1.jpeg" alt="본문 아이템 이미지 입니다.">
                 <div class="descr">
                     <h2>Title</h2>
-                    <p>content</p>
+                    <p>contentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontent</p>
                 </div>
             </article>
             <article class="items">
@@ -99,16 +99,18 @@
                 </div>
             </article>
         </section>
-        <div class="modal">
-            <img src="" alt="modal이미지">
+        <button id="top_btn" class="move_top-btn"></button>
+    </main>
+    <div class="modal-background">
+        <div id="modal" class="modal-cont">
+            <img src="./src/assets/img/item-2.jpeg" alt="modal이미지">
             <div>
                 <h2>Title</h2>
                 <p>content</p>
             </div>
-            <button>X</button>
+            <button id="modal-btn"><img src="./src/assets/icon/icon-close.png" alt="모달창 닫기"></button>
         </div>
-        <button id="top_btn" class="move_top-btn"></button>
-    </main>
-    <script src="./src/js/main.js"></script>
+    </div>
+    <script type="module" src="./src/js/main.js"></script>
 </body>
 </html>
