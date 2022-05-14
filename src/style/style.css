@@ -49,6 +49,8 @@ table {
 }
 
 header {
+  position: fixed;
+  top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -71,14 +73,22 @@ header .header-cont {
           justify-content: space-between;
 }
 
+header .header-cont .logo {
+  height: 50px;
+  margin-top: 20px;
+}
+
 header .header-cont .nav-cont {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 400px;
+  width: 500px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   gap: 50px;
 }
 
@@ -87,19 +97,29 @@ header .header-cont .nav-cont nav ul {
   display: -ms-flexbox;
   display: flex;
   height: 90px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 20px;
+}
+
+header .header-cont .nav-cont nav ul .nav-items {
+  height: 90px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 30px;
+  font-size: 20px;
+  line-height: 30px;
+  vertical-align: bottom;
+}
+
+header .header-cont .nav-cont nav ul .nav-items:hover {
+  background-color: aquamarine;
 }
 
 header .header-cont .nav-cont .darkmod-cont {
   position: relative;
-  width: 120px;
-  height: 44px;
+  width: 80px;
+  height: 34px;
   background-color: grey;
   border-radius: 20px;
   z-index: 10;
@@ -111,8 +131,8 @@ header .header-cont .nav-cont .darkmod-cont.dkmod {
 
 header .header-cont .nav-cont .darkmod {
   position: absolute;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   border-radius: 100%;
   background-color: black;
   border: none;
@@ -126,10 +146,10 @@ header .header-cont .nav-cont .darkmod {
 header .header-cont .nav-cont .darkmod.dkmod {
   position: absolute;
   top: 2px;
-  -webkit-transform: translateX(60px);
-          transform: translateX(60px);
-  width: 40px;
-  height: 40px;
+  -webkit-transform: translateX(30px);
+          transform: translateX(30px);
+  width: 30px;
+  height: 30px;
   border-radius: 100%;
   background-color: #fff;
   -webkit-transition: .3s linear all;
@@ -138,6 +158,7 @@ header .header-cont .nav-cont .darkmod.dkmod {
 
 main {
   width: 100vw;
+  margin-top: 90px;
   background-color: #1A6DFF;
 }
 
@@ -181,7 +202,11 @@ main section .items .descr {
 }
 
 main section .items .descr h2 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-size: 24px;
+  margin-bottom: 20px;
 }
 
 main section .items img {
@@ -199,8 +224,8 @@ main .modal {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
   border-radius: 100%;
   -webkit-box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.2);
           box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.2);
