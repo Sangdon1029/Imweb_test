@@ -9,7 +9,7 @@ top_btn.addEventListener('click',()=> {
 let darkmod = document.getElementById('darkmod');
 let darkmod_cont = document.getElementById('darkmod-cont');
 
-darkmod.addEventListener('click', ()=> {
+darkmod_cont.addEventListener('click', ()=> {
     darkmod.classList.toggle('dkmod');
     darkmod_cont.classList.toggle('dkmod');
 })
