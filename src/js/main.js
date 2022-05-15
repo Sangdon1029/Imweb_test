@@ -13,11 +13,16 @@ top_btn.addEventListener('click',()=> {
 const darkmod = document.getElementById('darkmod');
 const darkmod_cont = document.getElementById('darkmod-cont');
 const mainbackground = document.getElementById('main');
+const items = document.querySelectorAll('.items');
+const nav_item = document.querySelectorAll('.nav-items');
 
 darkmod_cont.addEventListener('click', ()=> {
     darkmod.classList.toggle('dkmod');
     darkmod_cont.classList.toggle('dkmod');
     mainbackground.classList.toggle('dkmod');
+    items.forEach(el => { el.classList.toggle('dkmod')});
+    nav_item.forEach(el => { el.classList.toggle('dkmod')});
+
 })
 // darkMode //
 
