@@ -65,6 +65,7 @@ header {
       -ms-flex-pack: center;
           justify-content: center;
   background-color: #fff;
+  z-index: 10;
 }
 
 header .header-cont {
@@ -209,26 +210,33 @@ main section .items {
   text-align: start;
   padding-top: 50px;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+main section .items:hover {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+  -webkit-box-shadow: 3px 3px 1px 3px rgba(0, 0, 0, 0.2);
+          box-shadow: 3px 3px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 main section .items.dkmod {
   background-color: #2c2d30;
 }
 
-main section .items .descr {
-  width: 330px;
-  margin: 30px auto;
-}
-
-main section .items .descr h2 {
+main section .items h2 {
+  padding: 15px 33px;
+  width: 100%;
+  height: 44px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 24px;
 }
 
-main section .items .descr p {
+main section .items p {
   height: 200px;
+  padding: 10px 33px;
   overflow: hidden;
   text-overflow: ellipsis;
   word-wrap: break-word;
@@ -238,7 +246,7 @@ main section .items .descr p {
   -webkit-box-orient: vertical;
 }
 
-main section .items img {
+main section img {
   width: 330px;
   height: 200px;
   margin: 0 auto;
@@ -307,6 +315,7 @@ main section .items img {
 
 .modal-background {
   display: none;
+  z-index: -10;
 }
 
 .modal-background.on {
@@ -316,6 +325,7 @@ main section .items img {
   left: 0;
   width: 100vw;
   height: 100vh;
+  z-index: 10;
   -webkit-filter: drop-shadow(0px 0px 9999px black);
           filter: drop-shadow(0px 0px 9999px black);
 }
