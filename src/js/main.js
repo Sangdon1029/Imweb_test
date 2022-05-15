@@ -22,7 +22,6 @@ darkmod_cont.addEventListener('click', ()=> {
     mainbackground.classList.toggle('dkmod');
     items.forEach(el => { el.classList.toggle('dkmod')});
     nav_item.forEach(el => { el.classList.toggle('dkmod')});
-
 })
 // darkMode //
 
@@ -34,7 +33,6 @@ const section = document.querySelectorAll('section > .items');
     for(let i=0;i<section.length; i ++){
         section[i].addEventListener('click',(event)=>{
             let parentElement = event.target.parentElement;
-            console.log(parentElement.id);
             if(parentElement.nodeName === 'ARTICLE'){
                 if(parentElement.id === 'zero'){
                    count = 0;
@@ -89,17 +87,25 @@ function Modal() {
     let modal_btn = document.createElement('button');
     modal_btn.setAttribute('id','modal-btn');
     let icon_close = document.createElement('img');
-    icon_close.setAttribute('src','./src/assets/icon/icon-close.png')
+    icon_close.setAttribute('src','./src/assets/icon/icon-close.png');
+    icon_close.setAttribute('class','target');
     modal_btn.appendChild(icon_close);
     // Dom 생성하기
     modal_root.appendChild(modal_background).appendChild(modal_cont).append(img,div,modal_btn);  
 }
     // 생성된 Modal 제거하기
-    modal_root.addEventListener('click',()=>{
-        const modal= document.querySelector('#modal-root');
-        const modalChild = modal.querySelector('.modal-background');
+    
+const modal= document.querySelector('#modal-root');
+
+
+modal.addEventListener('click',(el)=>{
+    const modalChild = modal.querySelector('.modal-background');
+    const modal_close = modal.querySelector('#modal-btn');
+    const img_close = modal.querySelector('.target');
+    if(el.target === modal_close || el.target === img_close) {
         modalChild.remove();
-    })
+    }
+})
 // modal Function //
 
 
