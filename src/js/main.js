@@ -9,17 +9,18 @@ top_btn.addEventListener('click',()=> {
 })
 // movetopFunction //
 
+// darkMode 
 const darkmod = document.getElementById('darkmod');
 const darkmod_cont = document.getElementById('darkmod-cont');
-const btn = document.getElementsByTagName('button');
 const mainbackground = document.getElementById('main');
 
 darkmod_cont.addEventListener('click', ()=> {
     darkmod.classList.toggle('dkmod');
     darkmod_cont.classList.toggle('dkmod');
-    // btn.classList.toggle('dkmod');
     mainbackground.classList.toggle('dkmod');
 })
+// darkMode //
+
 
 //modal Function
 let count = 0;
@@ -56,11 +57,10 @@ const section = document.querySelectorAll('section > .items');
                     count = 11;
                 }
             } else if (parentElement.nodeName === 'SECTION'){
-                console.log('잘못됬습니다.');
-            }
-        })
-        section[i].addEventListener('click',Modal);
 
+            }
+            section[i].addEventListener('click',Modal);
+        })
     }
 
 //Modal 동적 생성
@@ -96,3 +96,16 @@ function Modal() {
         modalChild.remove();
     })
 // modal Function //
+
+
+// 모바일
+
+let mobile_btnMore = document.getElementById('media-btn-hamburger');
+const mobile_nav = document.getElementById('media-nav');
+mobile_btnMore.addEventListener('click',()=>{
+    mobile_nav.classList.toggle('on');
+})
+const mobile_nav_close =document.getElementById('media-nav-close');
+mobile_nav_close.addEventListener('click',()=>{
+    mobile_nav.classList.remove('on');
+})

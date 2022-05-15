@@ -14,9 +14,9 @@
             <div class="nav-cont">
                 <nav>
                     <ul>
-                        <li class="nav-items">Menu</li>
-                        <li class="nav-items">Category</li>
-                        <li class="nav-items">About</li>
+                        <li class="nav-items"><a href="#none">Menu</a></li>
+                        <li class="nav-items"><a href="#none">Category</a></li>
+                        <li class="nav-items"><a href="#none">About</a></li>
                     </ul>
                 </nav>
                 <div id="darkmod-cont" class="darkmod-cont">
@@ -24,6 +24,26 @@
                     </button>
                 </div>
             </div>
+        </div>
+        <div class="media-header-cont">
+            <button id="media-btn-hamburger">
+                <img src="./src/assets/icon/icon-hamburger.png" alt="메뉴 열기">
+            </button>
+            <div id="darkmod-cont" class="darkmod-cont">
+                <button id="darkmod" class="darkmod"></button>
+            </div>
+            <nav id="media-nav" >
+                <ul>
+                    <li class="nav-items">
+                        <button id="media-nav-close">
+                            <img src="./src/assets/icon/icon-close.png" alt="메뉴 닫기">
+                        </button>
+                    </li>
+                    <li class="nav-items"><a href="#none">Menu</a></li>
+                    <li class="nav-items"><a href="#none">Category</a></li>
+                    <li class="nav-items"><a href="#none">About</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
     <main id="main">
@@ -92,7 +112,7 @@
         <button id="top_btn" class="move_top-btn"></button>
     </main>
     <div id="modal-root"></div>
-    <!-- <div id="modal-cont" class="modal-background ">
+    <!-- <div id="modal-cont" class="modal-background on ">
         <div id="modal" class="modal-cont">
             <img src="./src/assets/img/item-2.jpeg" alt="modal이미지">
             <div>
