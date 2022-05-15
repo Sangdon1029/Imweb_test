@@ -26,7 +26,8 @@ darkmod_cont.addEventListener('click', ()=> {
 // darkMode //
 
 
-//modal Function
+//  -- modal Function -- 
+
 let count = 0;
 const modal_root = document.getElementById('modal-root');
 const section = document.querySelectorAll('section > .items');
@@ -66,7 +67,44 @@ const section = document.querySelectorAll('section > .items');
             section[i].addEventListener('click',Modal(i));
         })
     }
-//Modal 동적 생성
+    
+    // 모바일 고려
+    section.forEach(el => {
+            el.addEventListener('touchstart', ()=>{
+                    let parentElement = el.target.parentElement;
+                    if(parentElement.nodeName === 'ARTICLE'){
+                        if(parentElement.id === 'zero'){
+                           count = 0;
+                        } else if(parentElement.id === 'one'){
+                           count = 1;
+                        } else if(parentElement.id === 'two'){
+                            count = 2;
+                        } else if(parentElement.id === 'three'){
+                            count = 3;
+                        } else if(parentElement.id === 'four'){
+                            count = 4;
+                        } else if(parentElement.id === 'five'){
+                            count = 5;
+                        } else if(parentElement.id === 'six'){
+                            count = 6;
+                        } else if(parentElement.id === 'seven'){
+                            count = 7;
+                        } else if(parentElement.id === 'eight'){
+                            count = 8;
+                        } else if(parentElement.id === 'nine'){
+                            count = 9;
+                        }  else if(parentElement.id === 'ten'){
+                            count = 10;
+                        }  else if(parentElement.id === 'test'){
+                            count = 11;
+                        }
+                    } else if (parentElement.nodeName === 'SECTION'){
+                        return ;
+                    }
+                section[i].addEventListener('click',Modal(i));
+            });
+    });
+// Modal 동적 생성
 function Modal() {
     let modal_background = document.createElement('div');
     let modal_cont = document.createElement('div');
@@ -92,11 +130,9 @@ function Modal() {
     // Dom 생성하기
     modal_root.appendChild(modal_background).appendChild(modal_cont).append(img,div,modal_btn);  
 }
-    // 생성된 Modal 제거하기
-    
+
+// 생성된 Modal 제거하기
 const modal= document.querySelector('#modal-root');
-
-
 modal.addEventListener('click',(el)=>{
     const modalChild = modal.querySelector('.modal-background');
     const modal_close = modal.querySelector('#modal-btn');
@@ -105,20 +141,22 @@ modal.addEventListener('click',(el)=>{
         modalChild.remove();
     }
 })
-// modal Function //
+//  --  modal Function -- //
 
 
 // 모바일
-
-let mobile_btnMore = document.getElementById('media-btn-hamburger');
+// 모바일 더보기 메뉴
+const mobile_btnMore = document.getElementById('media-btn-hamburger');
 const mobile_nav = document.getElementById('media-nav');
 mobile_btnMore.addEventListener('click',()=>{
     mobile_nav.classList.toggle('on');
 })
+// 모바일 더보기 메뉴 닫기버튼
 const mobile_nav_close =document.getElementById('media-nav-close');
 mobile_nav_close.addEventListener('click',()=>{
     mobile_nav.classList.remove('on');
 })
+// 모바일 다크모드 
 const mobile_dark_cont = document.getElementById('media-darkmod-cont');
 const mobile_dark = document.getElementById('media-darkmod');
 document.addEventListener('touchstart',(el)=> {
@@ -130,3 +168,4 @@ document.addEventListener('touchstart',(el)=> {
         nav_item.forEach(el => { el.classList.toggle('dkmod')});
     }
 })
+
