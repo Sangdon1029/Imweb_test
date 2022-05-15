@@ -256,6 +256,13 @@ header .media-header-cont {
   header .media-header-cont nav.on ul li:not(:nth-child(1)):hover a {
     color: #fff;
   }
+  header .media-header-cont nav.on ul li.dkmod:not(:nth-child(1)):hover {
+    background-color: #6b6e75;
+    color: #fff;
+  }
+  header .media-header-cont nav.on ul li.dkmod:not(:nth-child(1)):hover a {
+    color: #fff;
+  }
   header .media-header-cont nav.on ul li button img {
     position: absolute;
     top: 60px;

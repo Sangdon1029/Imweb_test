@@ -31,8 +31,9 @@ let count = 0;
 const modal_root = document.getElementById('modal-root');
 const section = document.querySelectorAll('section > .items');
     for(let i=0;i<section.length; i ++){
-        section[i].addEventListener('click',(event)=>{
-            let parentElement = event.target.parentElement;
+        // 데스크탑 고려 
+        section[i].addEventListener('click',(el)=>{
+            let parentElement = el.target.parentElement;
             if(parentElement.nodeName === 'ARTICLE'){
                 if(parentElement.id === 'zero'){
                    count = 0;
@@ -60,15 +61,13 @@ const section = document.querySelectorAll('section > .items');
                     count = 11;
                 }
             } else if (parentElement.nodeName === 'SECTION'){
-
+                return ;
             }
-            section[i].addEventListener('click',Modal);
+            section[i].addEventListener('click',Modal(i));
         })
     }
-
 //Modal 동적 생성
 function Modal() {
-    event.preventDefault();
     let modal_background = document.createElement('div');
     let modal_cont = document.createElement('div');
     let img = document.createElement('img');
@@ -119,4 +118,15 @@ mobile_btnMore.addEventListener('click',()=>{
 const mobile_nav_close =document.getElementById('media-nav-close');
 mobile_nav_close.addEventListener('click',()=>{
     mobile_nav.classList.remove('on');
+})
+const mobile_dark_cont = document.getElementById('media-darkmod-cont');
+const mobile_dark = document.getElementById('media-darkmod');
+document.addEventListener('touchstart',(el)=> {
+    if(el.target.id === "media-darkmod-cont" || el.target.id === "media-darkmod" ) {
+        mobile_dark_cont.classList.toggle('dkmod');
+        mobile_dark.classList.toggle('dkmod');
+        mainbackground.classList.toggle('dkmod');
+        items.forEach(el => { el.classList.toggle('dkmod')});
+        nav_item.forEach(el => { el.classList.toggle('dkmod')});
+    }
 })
