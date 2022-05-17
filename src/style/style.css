@@ -1,0 +1,641 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'GmarketBold';
+  src: url(../assets/fonts/GmarketSansOTF/GmarketSansBold.otf);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100vw;
+  height: 90px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #fff;
+  z-index: 10;
+}
+
+header .header-cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80vw;
+  height: 90px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header .header-cont .logo {
+  height: 50px;
+  margin-top: 20px;
+}
+
+header .header-cont .nav-cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 500px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  gap: 50px;
+}
+
+header .header-cont .nav-cont nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 90px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .header-cont .nav-cont nav ul .nav-items {
+  height: 90px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 30px;
+  font-size: 20px;
+  line-height: 30px;
+  vertical-align: bottom;
+}
+
+header .header-cont .nav-cont nav ul .nav-items:hover {
+  background-color: #1A6DFF;
+}
+
+header .header-cont .nav-cont nav ul .nav-items:hover a {
+  color: #fff;
+}
+
+header .header-cont .nav-cont nav ul .nav-items.dkmod:hover {
+  background-color: #292a2d;
+}
+
+header .header-cont .nav-cont .darkmod-cont {
+  position: relative;
+  width: 80px;
+  height: 34px;
+  background-color: grey;
+  border-radius: 20px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+header .header-cont .nav-cont .darkmod-cont.dkmod {
+  background-color: #1A6DFF;
+}
+
+header .header-cont .nav-cont .darkmod {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background-color: black;
+  border: none;
+  z-index: 20;
+  top: 2px;
+  margin-left: 8px;
+  -webkit-transition: .3s linear all;
+  transition: .3s linear all;
+  cursor: pointer;
+}
+
+header .header-cont .nav-cont .darkmod.dkmod {
+  position: absolute;
+  top: 2px;
+  -webkit-transform: translateX(30px);
+          transform: translateX(30px);
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background-color: #fff;
+  -webkit-transition: .3s linear all;
+  transition: .3s linear all;
+}
+
+header .media-header-cont {
+  display: none;
+}
+
+@media screen and (max-width: 440px) {
+  header {
+    top: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100vw;
+    height: 90px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-color: #fff;
+    z-index: 10;
+  }
+  header .header-cont {
+    display: none;
+  }
+  header .media-header-cont {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100vw;
+    padding: 0 20px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header .media-header-cont button {
+    background-color: transparent;
+    border: none;
+  }
+  header .media-header-cont nav {
+    display: none;
+  }
+  header .media-header-cont nav.on {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60vw;
+    height: 100vh;
+    background-color: #fff;
+    -webkit-transition: 1s ease all;
+    transition: 1s ease all;
+    -webkit-filter: drop-shadow(0px 0px 9999px black);
+            filter: drop-shadow(0px 0px 9999px black);
+  }
+  header .media-header-cont nav.on ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 50px  0;
+  }
+  header .media-header-cont nav.on ul li {
+    padding: 30px;
+    width: 100%;
+    font-size: 32px;
+  }
+  header .media-header-cont nav.on ul li:not(:nth-child(1)):hover {
+    background-color: #1A6DFF;
+    color: #fff;
+  }
+  header .media-header-cont nav.on ul li:not(:nth-child(1)):hover a {
+    color: #fff;
+  }
+  header .media-header-cont nav.on ul li.dkmod:not(:nth-child(1)):hover {
+    background-color: #6b6e75;
+    color: #fff;
+  }
+  header .media-header-cont nav.on ul li.dkmod:not(:nth-child(1)):hover a {
+    color: #fff;
+  }
+  header .media-header-cont nav.on ul li button img {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+  }
+  header .media-header-cont .darkmod-cont {
+    position: relative;
+    width: 80px;
+    height: 34px;
+    background-color: grey;
+    border-radius: 20px;
+    z-index: 20;
+  }
+  header .media-header-cont .darkmod-cont.dkmod {
+    background-color: #1A6DFF;
+  }
+  header .media-header-cont .darkmod {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: black;
+    border: none;
+    z-index: 20;
+    top: 2px;
+    margin-left: 8px;
+    -webkit-transition: .3s linear all;
+    transition: .3s linear all;
+  }
+  header .media-header-cont .darkmod.dkmod {
+    position: absolute;
+    top: 2px;
+    -webkit-transform: translateX(30px);
+            transform: translateX(30px);
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: #fff;
+    -webkit-transition: .3s linear all;
+    transition: .3s linear all;
+  }
+}
+
+main {
+  width: 100vw;
+  margin-top: 90px;
+  background-color: #1A6DFF;
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
+}
+
+main.dkmod {
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
+  background-color: #292a2d;
+}
+
+main section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80vw;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 100px;
+  padding: 50px 0;
+  margin: 0 auto;
+}
+
+main section .items {
+  width: 400px;
+  height: 480px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  background-color: #fff;
+  color: #406dba;
+  text-align: start;
+  padding-top: 50px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+main section .items:hover {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+  -webkit-box-shadow: 3px 3px 1px 3px rgba(0, 0, 0, 0.2);
+          box-shadow: 3px 3px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+main section .items.dkmod {
+  background-color: #6b6e75;
+  color: #fff;
+}
+
+main section .items h2 {
+  width: 100%;
+  height: 44px;
+  margin-top: 10px;
+  padding: 15px 33px;
+  font-size: 24px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: 'GmarketBold';
+}
+
+main section .items p {
+  height: 170px;
+  padding: 10px 33px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  display: -webkit-box;
+  line-height: 23px;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+}
+
+main section .items img {
+  width: 330px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.move_top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  -webkit-box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+.move_top-btn img {
+  width: 30px;
+  height: 30px;
+}
+
+@media screen and (max-width: 1440px) {
+  main section .items {
+    width: 300px;
+    height: 280px;
+    padding-top: 30px;
+  }
+  main section .items h2 {
+    width: 300px;
+    padding: 5px 35px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 24px;
+  }
+  main section .items p {
+    width: 300px;
+    height: 90px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 20px 35px;
+    -webkit-line-clamp: 3;
+  }
+  main section .items img {
+    width: 230px;
+    height: 100px;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  main {
+    width: 100vw;
+    margin-top: 0px;
+    padding-top: 120px;
+    background-color: #1A6DFF;
+    -webkit-transition: 1s ease all;
+    transition: 1s ease all;
+  }
+  main.dkmod {
+    -webkit-transition: 1s ease all;
+    transition: 1s ease all;
+    background-color: #292a2d;
+  }
+  main section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100vw;
+    padding: 20px 10px;
+    margin: 0 auto;
+    gap: 20px;
+  }
+  main section .items {
+    width: 150px;
+    height: 240px;
+    padding-top: 10px;
+    border-radius: 1px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  main section .items h2 {
+    width: 100%;
+    height: 20px;
+    padding: 10px 10px;
+    font-weight: 800;
+    font-size: 10px;
+    margin-bottom: 20px;
+  }
+  main section .items p {
+    width: 100%;
+    height: 90px;
+    padding: 0px 10px;
+    font-size: 10px;
+    line-height: 18px;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+    margin-bottom: 5px;
+  }
+  main section .items img {
+    width: 130px;
+    margin: 0 auto;
+  }
+  .move_top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    -webkit-box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.2);
+            box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.modal-background {
+  display: none;
+  z-index: -10;
+}
+
+.modal-background.on {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  -webkit-filter: drop-shadow(0px 0px 9999px black);
+          filter: drop-shadow(0px 0px 9999px black);
+}
+
+.modal-cont {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 70vw;
+  height: 60vh;
+  top: 20vh;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  padding: 3vw;
+  background-color: #fff;
+  z-index: 10;
+}
+
+.modal-cont img {
+  width: 20vw;
+  height: 48vh;
+}
+
+.modal-cont div {
+  width: 100%;
+  padding: 20px 40px;
+}
+
+.modal-cont div h2 {
+  margin-bottom: 30px;
+  font-size: 30px;
+}
+
+.modal-cont button {
+  cursor: pointer;
+  top: 30px;
+  right: 30px;
+  position: absolute;
+  z-index: 20;
+  border: none;
+  background-color: transparent;
+}
+
+.modal-cont button img {
+  width: 30px;
+  height: 30px;
+}
+
+@media screen and (max-width: 440px) {
+  .modal-background {
+    display: none;
+    z-index: -10;
+  }
+  .modal-background.on {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    -webkit-filter: drop-shadow(0px 0px 9999px black);
+            filter: drop-shadow(0px 0px 9999px black);
+  }
+  .modal-cont {
+    position: fixed;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 400px;
+    height: 700px;
+    top: 100px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 80px 23px;
+    background-color: #fff;
+    z-index: 10;
+  }
+  .modal-cont img {
+    width: 80vw;
+    height: 40vh;
+  }
+  .modal-cont div {
+    width: 100%;
+    padding: 20px;
+  }
+  .modal-cont div h2 {
+    margin-bottom: 30px;
+    font-size: 30px;
+  }
+  .modal-cont button {
+    cursor: pointer;
+    top: 30px;
+    right: 30px;
+    position: absolute;
+    z-index: 20;
+    border: none;
+    background-color: transparent;
+  }
+  .modal-cont button img {
+    width: 30px;
+    height: 30px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
