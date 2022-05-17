@@ -58,6 +58,11 @@ a {
           box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'GmarketBold';
+  src: url(../assets/fonts/GmarketSansOTF/GmarketSansBold.otf);
+}
+
 header {
   position: fixed;
   top: 0;
@@ -349,7 +354,7 @@ main section .items {
       -ms-flex-pack: start;
           justify-content: start;
   background-color: #fff;
-  color: #1A6DFF;
+  color: #406dba;
   text-align: start;
   padding-top: 50px;
   border-radius: 5px;
@@ -377,17 +382,18 @@ main section .items h2 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-family: 'GmarketBold';
 }
 
 main section .items p {
-  height: 200px;
+  height: 170px;
   padding: 10px 33px;
   overflow: hidden;
   text-overflow: ellipsis;
   word-wrap: break-word;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
-  /* ellipsis line */
+  line-height: 23px;
+  -webkit-line-clamp: 7;
   -webkit-box-orient: vertical;
 }
 
@@ -431,10 +437,11 @@ main section .items img {
   }
   main section .items p {
     width: 300px;
-    height: 110px;
+    height: 90px;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     padding: 20px 35px;
+    -webkit-line-clamp: 3;
   }
   main section .items img {
     width: 230px;
@@ -485,15 +492,10 @@ main section .items img {
     width: 100%;
     height: 90px;
     padding: 0px 10px;
-    overflow: hidden;
     font-size: 10px;
     line-height: 18px;
     text-overflow: ellipsis;
-    word-wrap: break-word;
-    display: -webkit-box;
-    -webkit-line-clamp: 5;
-    /* ellipsis line */
-    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
     margin-bottom: 5px;
   }
   main section .items img {
